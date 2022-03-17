@@ -1,0 +1,42 @@
+.markdown {
+  color: white !important;
+}
+
+.markdown h1 {
+  border-bottom: 2px solid #dc7777;
+}
+
+.markdown h2 {
+  display: inline-block;
+  margin-bottom: 0;
+  border-bottom: 2px solid #7fe1f6;
+}
+
+.markdown pre div {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  border-radius: 7px;
+}
+
+.markdown pre div code {
+  background: transparent !important;
+}
+
+.markdown ul li {
+  list-style: none;
+}
+
+.markdown ul li::before {
+  content: "\2022";
+  display: inline-block;
+  width: 1em;
+  color: #db6262;
+  margin-left: -1em;
+  font-weight: bold;
+}
+
+.markdown img {
+  display: block;
+  margin: 0.5em auto;
+  width: 97%;
+  border-radius: 7px;
+}

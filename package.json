@@ -1,0 +1,94 @@
+{
+  "name": "electronapp",
+  "author": "Valentin Cassarino",
+  "description": "Markdown Editor",
+  "main": "./public/electron.js",
+  "homepage": "./",
+  "version": "0.1.0",
+  "private": true,
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  },
+  "build": {
+    "appId": "com.electron.myapp",
+    "productName": "PENTA Markdown",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "./public/icon.ico"
+    },
+    "linux": {
+      "target": "deb"
+    }
+  },
+  "dependencies": {
+    "@codemirror/commands": "^0.19.8",
+    "@codemirror/gutter": "^0.19.9",
+    "@codemirror/highlight": "^0.19.7",
+    "@codemirror/history": "^0.19.2",
+    "@codemirror/lang-javascript": "^0.19.7",
+    "@codemirror/lang-markdown": "^0.19.6",
+    "@codemirror/language": "^0.19.8",
+    "@codemirror/language-data": "^0.19.2",
+    "@codemirror/matchbrackets": "^0.19.4",
+    "@codemirror/state": "^0.19.9",
+    "@codemirror/theme-one-dark": "^0.19.1",
+    "@electron/remote": "^2.0.8",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "electron-acrylic-window": "^0.5.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-markdown": "^8.0.1",
+    "react-scripts": "5.0.0",
+    "react-split": "^2.0.14",
+    "react-syntax-highlighter": "^15.5.0",
+    "rehype-raw": "^6.1.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:start": "concurrently -k \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electronmon .\"",
+    "electron:package:mac": "npm run build && electron-builder -m -c.extraMetadata.main=build/electron.js",
+    "electron:package:win": "npm run build && electron-builder -w -c.extraMetadata.main=build/electron.js",
+    "electron:package:linux": "npm run build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      "last 1 electron version"
+    ],
+    "development": [
+      "last 1 electron version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^17.1.2",
+    "electron-builder": "^22.14.13",
+    "electronmon": "^2.0.2",
+    "wait-on": "^6.0.1"
+  }
+}

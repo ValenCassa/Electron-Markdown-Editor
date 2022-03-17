@@ -1,0 +1,38 @@
+.upperNav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  padding: 0.3em;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo svg {
+  width: 80px;
+  height: 25px;
+}
+
+.buttonContainer {
+  margin-left: 1em;
+  position: relative;
+  z-index: 99999;
+  margin-top: 0.2em;
+  -webkit-app-region: no-drag;
+}
+
+.button {
+  padding: 0 0.5em;
+  border: none;
+  background: none;
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+}

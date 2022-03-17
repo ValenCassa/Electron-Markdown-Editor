@@ -1,0 +1,48 @@
+body,
+html {
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  border: none;
+}
+
+.gutter {
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: calc(100% + 2em) !important;
+  cursor: e-resize;
+}
+
+.cm-activeLine {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.cm-gutter {
+  background-color: #2c4a6a !important;
+}
+
+.cm-content {
+  font-size: 15px;
+}
+
+mark {
+  padding: 0.04em 0.2em;
+  background-color: #827ff6;
+  color: white;
+  border-radius: 4px;
+}
+
+a {
+  color: #827ff6;
+}
